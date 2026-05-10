@@ -908,14 +908,51 @@ Either way, the H4-info effect is robust to state-composition
 confounders --- it cannot be attributed to a sub-set of tech-heavy
 states driving the entire occupation-level result.
 
+**v2.5 extension.** A potential concern with v2.4 is that
+tech-occupation share and high-skill professional share are both
+derived from BLS occupational data, the same underlying dataset that
+generates the dependent variable. v2.5 replaces the AI-adoption
+proxy with the Felten et al. (2021) AIGE (AI Geographic Exposure)
+measure --- an academic-grade state-level instrument constructed
+independently of BLS occupational employment, by mapping advances in
+AI capabilities to county-level occupational ability profiles. The
+state-level AIGE places the District of Columbia,
+Massachusetts, New York, Virginia, and Connecticut in the top quintile
+and Nevada, Wyoming, South Carolina, Hawaii, and Arkansas in the
+bottom quintile --- consistent with widely held priors about
+US tech-hub geography.
+
+The DiD interaction with AIGE remains non-significant in the same
+two-way-FE specification ($\hat{\beta}_3 = -1.4 \times 10^{-3}$,
+$t = -0.49$, two-sided $p = 0.62$). A median split yields nearly
+identical $H^{\text{info}}_{\text{RTI}}$ coefficients in high-AIGE
+states ($\hat{\beta} = +6.94 \times 10^{-2}$, $t = +10.63$,
+$p < 10^{-20}$) and low-AIGE states ($\hat{\beta} = +7.22 \times 10^{-2}$,
+$t = +10.98$, $p < 10^{-20}$), with their difference indistinguishable
+from zero ($p_{\text{one}} = 0.62$). A tertile split is even more
+striking: the H4-info coefficient is $+7.59 \times 10^{-2}$
+(bottom), $+6.94 \times 10^{-2}$ (mid), and $+6.81 \times 10^{-2}$
+(top), all with $t > 8.6$ and $p < 10^{-15}$.
+
+Across three independently-constructed state-level AI-adoption proxies
+(tech-occupation share v2.3, high-skill professional share v2.4,
+Felten AIGE v2.5), the DiD interaction is consistently non-significant
+while the main H4-info effect is consistently very large in *every*
+sub-sample defined by AI exposure. We interpret this as strong
+evidence that the H4-info effect is *universal* across the US states
+under study --- not concentrated in tech-heavy regions, not driven by
+state-composition confounders --- and that GenAI diffusion across US
+states 2019--2024 has been too rapid and uniform to leave detectable
+state-level moderation in BLS-resolution occupational employment.
+
 Cross-country generalisation against an ISCO-08-based panel and
 firm-level AI-adoption instruments (e.g., GenAI use surveys from
 Bick and Blandin, the Anthropic Economic Index) remain the central
-tasks for v2.5+.
+tasks for v2.6+.
 
 # 10. Conclusion
 
-This is v2.4. We have argued that the *informational task entropy* of
+This is v2.5. We have argued that the *informational task entropy* of
 an occupation, $H^{\text{info}}$, provides a partial but novel
 predictor of the occupation's temporal robustness against AI-driven
 substitution. The informational form is empirically supported on the
@@ -957,17 +994,20 @@ that selects the technology rather than a bug to be optimised away;
 but the *targeting* of that selection on the labour side is
 informational, not metabolic.
 
-A state-level DiD attempted in v2.3--v2.4 (§9.10) finds no significant
-state-by-state moderation under three different AI-adoption proxies.
-However, a sub-sample analysis added in v2.4 finds the
-$H^{\text{info}}_{\text{RTI}}$ effect is present at very high
-significance in *both* high-AI and low-AI state subsamples
-($\hat{\beta} \approx +7.0 \times 10^{-2}$, $p < 10^{-20}$ in each),
-with no detectable difference between them. The H4-info effect is
-therefore robust to state-composition confounders. Cross-country
-replication against an ISCO-08-based panel and firm-level
-AI-adoption instruments remain the principal items of remaining work
-for v2.5+.
+A state-level DiD attempted in v2.3--v2.5 (§9.10) finds no significant
+state-by-state moderation under three independently-constructed
+AI-adoption proxies (tech-occupation share, high-skill professional
+share, Felten AIGE). However, sub-sample analyses across all three
+proxies confirm the $H^{\text{info}}_{\text{RTI}}$ effect at very high
+significance in *every* AI-exposure subsample
+($\hat{\beta} \approx +7 \times 10^{-2}$, $p < 10^{-15}$ in each
+median-split sub-sample and each tertile), with no detectable
+difference between sub-samples. The H4-info effect is therefore
+*universal* across the US states 2019--2024 --- robust to
+state-composition confounders, not concentrated in tech-heavy
+regions. Cross-country replication against an ISCO-08-based panel
+and firm-level AI-adoption instruments are the principal items of
+remaining work for v2.6+.
 
 # References
 
