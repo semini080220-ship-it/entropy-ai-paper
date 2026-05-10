@@ -1,0 +1,163 @@
+{
+  "N": 698,
+  "formula": "IRI = z(H_info) + z(JobZone) + z(log wage), unit weight",
+  "components": [
+    "H_info = 1 - Eloundou alpha",
+    "JobZone (O*NET 1-5)",
+    "log(BLS A_MEDIAN annual wage)"
+  ],
+  "validation": {
+    "pearson_r": 0.32794071616288134,
+    "p_pearson": 5.80347553948151e-19,
+    "spearman_rho": 0.3583214088689433,
+    "p_spearman": 1.4238817470948725e-22
+  },
+  "robustness": {
+    "regression_fitted": {
+      "weights": {
+        "H_info": 0.005877185804388244,
+        "JobZone": 0.008006851722753436,
+        "log_wage": 0.00909009005092946
+      },
+      "pearson_r": 0.3315294614581493
+    },
+    "PCA_first_component": {
+      "weights_oriented": [
+        -0.13235834404668387,
+        0.7051165242708243,
+        0.6966289944880645
+      ],
+      "pearson_r": 0.29550175758327313
+    }
+  },
+  "summary": {
+    "IRI_mean": 3.0131898249998517e-15,
+    "IRI_std": 2.0324763061431597,
+    "IRI_min": -6.9967006906264935,
+    "IRI_max": 6.025860369393245
+  },
+  "top10": [
+    {
+      "OCC_CODE": "29-1215",
+      "title_2024": "Family Medicine Physicians",
+      "IRI": 6.025860369393245,
+      "IRI_percentile": 100.0
+    },
+    {
+      "OCC_CODE": "29-1216",
+      "title_2024": "General Internal Medicine Physicians",
+      "IRI": 6.004398726970514,
+      "IRI_percentile": 99.8567335243553
+    },
+    {
+      "OCC_CODE": "29-1151",
+      "title_2024": "Nurse Anesthetists",
+      "IRI": 5.8608555732303955,
+      "IRI_percentile": 99.7134670487106
+    },
+    {
+      "OCC_CODE": "29-1221",
+      "title_2024": "Pediatricians, General",
+      "IRI": 5.709317466533505,
+      "IRI_percentile": 99.5702005730659
+    },
+    {
+      "OCC_CODE": "23-1023",
+      "title_2024": "Judges, Magistrate Judges, and Magistrates",
+      "IRI": 4.965198356862012,
+      "IRI_percentile": 99.42693409742121
+    },
+    {
+      "OCC_CODE": "29-1081",
+      "title_2024": "Podiatrists",
+      "IRI": 4.909811027904075,
+      "IRI_percentile": 99.2836676217765
+    },
+    {
+      "OCC_CODE": "29-1021",
+      "title_2024": "Dentists, General",
+      "IRI": 4.8967682129057195,
+      "IRI_percentile": 99.14040114613181
+    },
+    {
+      "OCC_CODE": "23-1011",
+      "title_2024": "Lawyers",
+      "IRI": 4.88273140741784,
+      "IRI_percentile": 98.99713467048711
+    },
+    {
+      "OCC_CODE": "11-1011",
+      "title_2024": "Chief Executives",
+      "IRI": 4.807084189016057,
+      "IRI_percentile": 98.8538681948424
+    },
+    {
+      "OCC_CODE": "29-1041",
+      "title_2024": "Optometrists",
+      "IRI": 4.595839073720613,
+      "IRI_percentile": 98.71060171919771
+    }
+  ],
+  "bottom10": [
+    {
+      "OCC_CODE": "43-4021",
+      "title_2024": "Correspondence Clerks",
+      "IRI": -6.9967006906264935,
+      "IRI_percentile": 0.14326647564469913
+    },
+    {
+      "OCC_CODE": "43-9021",
+      "title_2024": "Data Entry Keyers",
+      "IRI": -6.707817334585984,
+      "IRI_percentile": 0.28653295128939826
+    },
+    {
+      "OCC_CODE": "43-2021",
+      "title_2024": "Telephone Operators",
+      "IRI": -6.656858284234253,
+      "IRI_percentile": 0.42979942693409745
+    },
+    {
+      "OCC_CODE": "31-9094",
+      "title_2024": "Medical Transcriptionists",
+      "IRI": -5.716576519601132,
+      "IRI_percentile": 0.5730659025787965
+    },
+    {
+      "OCC_CODE": "41-9041",
+      "title_2024": "Telemarketers",
+      "IRI": -5.493795408633179,
+      "IRI_percentile": 0.7163323782234957
+    },
+    {
+      "OCC_CODE": "43-4071",
+      "title_2024": "File Clerks",
+      "IRI": -5.457961776532175,
+      "IRI_percentile": 0.8595988538681949
+    },
+    {
+      "OCC_CODE": "43-9022",
+      "title_2024": "Word Processors and Typists",
+      "IRI": -5.255434941733071,
+      "IRI_percentile": 1.002865329512894
+    },
+    {
+      "OCC_CODE": "43-9041",
+      "title_2024": "Insurance Claims and Policy Processing Clerks",
+      "IRI": -4.992398811361173,
+      "IRI_percentile": 1.146131805157593
+    },
+    {
+      "OCC_CODE": "43-9081",
+      "title_2024": "Proofreaders and Copy Markers",
+      "IRI": -4.954133320451254,
+      "IRI_percentile": 1.2893982808022924
+    },
+    {
+      "OCC_CODE": "27-3092",
+      "title_2024": "Court Reporters and Simultaneous Captioners",
+      "IRI": -4.864486642289189,
+      "IRI_percentile": 1.4326647564469914
+    }
+  ]
+}

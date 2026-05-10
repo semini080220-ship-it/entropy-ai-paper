@@ -1,0 +1,51 @@
+Dear Editor,
+
+I am pleased to submit the manuscript "Informational Task Entropy and
+the Selection of Occupations Under AI-Driven Substitution" for
+consideration as a research article in Entropy.
+
+The manuscript proposes a thermodynamic-informational reframing of the
+empirical phenomenon of AI-driven occupational displacement. Building
+on the Maximum Entropy Production Principle (Kleidon 2010; Martyushev
+and Seleznev 2006) and Jeremy England's dissipative-adaptation
+programme, I distinguish two senses of occupational entropy --
+thermodynamic (metabolic dissipation rate) and informational (Shannon
+entropy of the task profile) -- and test the corresponding labor-market
+predictions on the full US BLS 2019-2024 occupational panel (N = 707).
+
+The principal finding is that occupations of high informational task
+entropy are differentially preserved under AI-driven substitution
+(Pearson r = +0.328, p = 5.8e-19 for the composite Informational
+Resilience Index; p < 1e-13 for the underlying H_info coefficient once
+broad AI exposure is conditioned out). The thermodynamic form, by
+contrast, is dominated by non-AI confounders (COVID-era contraction,
+offshoring, demographic ageing) and is not supported on the same data.
+The result survives multi-source robustness checks using the Felten,
+Raj, and Seamans (2021) AIOE proxy and 2-digit NAICS industry fixed
+effects (the IRI coefficient retains t = +7.86, p = 1.7e-14, and adds
+Delta R^2 = +0.077 on top of industry effects).
+
+The companion dataset (Informational Resilience Index scores for
+N = 698 detailed US occupations, with computer-readable CSV and full
+construction code) is openly published under CC-BY 4.0 at Zenodo,
+alongside this manuscript's preprint. The paper sits at the
+intersection of non-equilibrium thermodynamics, information theory,
+and the economics of automation, and would be accessible to Entropy's
+interdisciplinary readership.
+
+The manuscript has not been submitted elsewhere and is not under
+consideration at any other journal. The author has no conflicts of
+interest to declare and no funding to acknowledge (independent
+researcher).
+
+I look forward to your editorial response.
+
+Sincerely,
+
+Semin Um (UM, Semin)
+Independent Researcher
+semini080220@gmail.com
+
+ORCID: (to be added if registered)
+Preprint DOI: 10.5281/zenodo.20111227
+Companion dataset DOI: (to be added after Zenodo dataset publish)

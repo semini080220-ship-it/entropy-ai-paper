@@ -1,0 +1,41 @@
+{
+  "N": 707,
+  "spec_1_uncontrolled": {
+    "beta_E_human": -2.3113889883352475e-08,
+    "se": 7.121167060463727e-09,
+    "t": -3.245800819879559,
+    "p_two_sided": 0.0012265763557022247,
+    "R_squared": 0.014723556051810749
+  },
+  "spec_2_dv_rating_alpha": {
+    "beta_E_human": -3.665096695582494e-08,
+    "se_beta_E_human": 7.669791187298784e-09,
+    "t_beta_E_human": -4.778613401694578,
+    "p_two_sided_beta": 2.149335241563577e-06,
+    "p_one_sided_positive_beta": 0.9999989253323792,
+    "gamma_GPT_exposure": -0.05672253672320789,
+    "p_gamma": 1.1790895406482704e-05,
+    "R_squared": 0.04124583201811183
+  },
+  "spec_2_dv_rating_beta": {
+    "beta_E_human": -1.2904515493863524e-08,
+    "se_beta_E_human": 1.0810773129148738e-08,
+    "t_beta_E_human": -1.1936718437897373,
+    "p_two_sided_beta": 0.23300843520681114,
+    "p_one_sided_positive_beta": 0.8834957823965944,
+    "gamma_GPT_exposure": 0.016004699709353396,
+    "p_gamma": 0.20998295154823832,
+    "R_squared": 0.016922100953086994
+  },
+  "spec_2_dv_rating_gamma": {
+    "beta_E_human": 1.6517163125999503e-08,
+    "se_beta_E_human": 1.1161741819754168e-08,
+    "t_beta_E_human": 1.4798015751239877,
+    "p_two_sided_beta": 0.13937354549173353,
+    "p_one_sided_positive_beta": 0.06968677274586677,
+    "gamma_GPT_exposure": 0.03821176266369379,
+    "p_gamma": 5.808079694080703e-06,
+    "R_squared": 0.04308878070843325
+  },
+  "verdict": "H4 sign flips across specifications -- ambiguous; control matters"
+}

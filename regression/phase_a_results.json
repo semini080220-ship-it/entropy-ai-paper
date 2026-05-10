@@ -1,0 +1,79 @@
+{
+  "phase": "A_pilot",
+  "N": 10,
+  "alpha": -0.10457191780821927,
+  "se_alpha": 0.05020984002150828,
+  "beta": 1.446917808219179e-07,
+  "se_beta": 6.449893230862737e-08,
+  "t_beta": 2.2433205580763382,
+  "p_two_sided": 0.05513902102862955,
+  "p_one_sided_positive": 0.027569510514314777,
+  "R_squared": 0.38614940321996216,
+  "pearson_r": 0.621409207543598,
+  "pearson_p": 0.05513902102862963,
+  "spearman_rho": 0.7778920850768356,
+  "spearman_p": 0.008063675062065546,
+  "verdict": "H4 CONFIRMED at one-sided alpha=0.05 (beta>0, p=0.0276)",
+  "data": [
+    {
+      "soc": "43-2011",
+      "title": "Call-center agent",
+      "E_human_J_per_h": 500000.0,
+      "delta_emp": -0.07
+    },
+    {
+      "soc": "43-9061",
+      "title": "Office clerk, general",
+      "E_human_J_per_h": 500000.0,
+      "delta_emp": -0.04
+    },
+    {
+      "soc": "27-3091",
+      "title": "Interpreter / translator",
+      "E_human_J_per_h": 500000.0,
+      "delta_emp": -0.08
+    },
+    {
+      "soc": "15-1252",
+      "title": "Software dev. (junior)",
+      "E_human_J_per_h": 500000.0,
+      "delta_emp": 0.0
+    },
+    {
+      "soc": "35-1011",
+      "title": "Chef / pastry chef",
+      "E_human_J_per_h": 900000.0,
+      "delta_emp": 0.01
+    },
+    {
+      "soc": "47-2152",
+      "title": "Plumber",
+      "E_human_J_per_h": 1200000.0,
+      "delta_emp": 0.02
+    },
+    {
+      "soc": "47-2111",
+      "title": "Electrician",
+      "E_human_J_per_h": 1000000.0,
+      "delta_emp": 0.015
+    },
+    {
+      "soc": "29-1141",
+      "title": "Registered nurse",
+      "E_human_J_per_h": 800000.0,
+      "delta_emp": 0.06
+    },
+    {
+      "soc": "31-1121",
+      "title": "Home health aide",
+      "E_human_J_per_h": 900000.0,
+      "delta_emp": 0.12
+    },
+    {
+      "soc": "53-3032",
+      "title": "Heavy truck driver",
+      "E_human_J_per_h": 600000.0,
+      "delta_emp": -0.01
+    }
+  ]
+}

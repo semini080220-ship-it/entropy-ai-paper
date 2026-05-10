@@ -1,0 +1,21 @@
+# Raw data archives (large, redistribute via original sources)
+regression/data/
+!regression/data/.keep
+
+# Build / cache
+__pycache__/
+*.pyc
+.pytest_cache/
+*.pdf.bak
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Word backup
+~$*.docx
+*.tex.bak
