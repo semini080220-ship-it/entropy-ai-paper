@@ -1,0 +1,37 @@
+{
+  "v2.8_pretrends": {
+    "PRE_2014_2019": {
+      "beta": 0.00372879198809663,
+      "se": 0.001157912389753336,
+      "t": 3.2202712580793396,
+      "p_one": 0.0006555527948076678,
+      "p_two": 0.0013111055896153356,
+      "R2": 0.06182179077731731,
+      "N": 1392
+    },
+    "POST_2019_2024": {
+      "beta": 0.009470662256998108,
+      "se": 0.0012269632918854743,
+      "t": 7.7187820692211115,
+      "p_one": 1.176836406102666e-14,
+      "p_two": 2.353672812205332e-14,
+      "R2": 0.10984621773182957,
+      "N": 1310
+    },
+    "diff_post_minus_pre": 0.005741870268901478,
+    "diff_se": 0.0016870684698549496,
+    "diff_t": 3.4034601271370755,
+    "diff_p_two": 0.0006750903004928421,
+    "verdict": "VERDICT (a-mixed): pre is significant but post is significantly larger. H4-info is a long-run gradient that AI further accelerated post-2022.",
+    "DDD_interaction": {
+      "beta_H_info": 0.0037569248112872223,
+      "beta_post": -0.007400706676544867,
+      "beta_interaction": 0.0057097011440715665,
+      "se_interaction": 0.0016917627416723653,
+      "t_interaction": 3.3750011177260775,
+      "p_two_interaction": 0.0007487341017320404,
+      "p_one_positive_interaction": 0.0003743670508660202,
+      "N": 2702
+    }
+  }
+}
