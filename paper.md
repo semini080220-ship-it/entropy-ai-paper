@@ -849,26 +849,53 @@ the BLS 2019--2024 series at the detailed-occupation level was
 unsuccessful within the scope of v2.0. Cross-country replication, with
 a defensible SOC--ISCO bridge, remains the central task of v2.2+.
 
-A second deferred extension is *causal identification* through
-state-level variation in AI adoption --- e.g., a
-difference-in-differences design comparing AI-intensive states
-(California, Washington, Massachusetts, New York) with low-AI-adoption
-regions. The 2019--2024 panel period coincides with COVID-19,
-quantitative-easing-driven asset inflation, and large minimum-wage
-adjustments, all of which plausibly contribute to the observed
-contraction of low-IRI occupations independently of AI substitution.
-The §9.6 RTI result --- that an AI-content-free $H^{\text{info}}$
-proxy still predicts employment growth in the predicted direction ---
-mitigates this concern, since RTI cannot mechanically capture COVID or
-minimum-wage shocks. But a state-by-state DiD with a defensible
-state-level AI-adoption instrument would constitute a stronger causal
-claim. State-level BLS panels are available; a standard measure of
-state-level AI adoption is not yet established in the literature. We
-defer this to v2.2+.
+A second extension, attempted in v2.3, is *causal identification*
+through state-level variation in AI adoption. We assemble a state ×
+occupation panel from BLS OEWS state-level releases ($N = 27{,}356$
+state-occupation cells, 51 states, $\sim 700$ occupations) and
+estimate
+
+$$
+\Delta\text{emp}_{i,s} = \alpha + \beta_1 H^{\text{info}}_{\text{RTI},i}
++ \beta_2 \text{tech}^{\text{share}}_s
++ \beta_3 (H^{\text{info}}_{\text{RTI},i} \times \text{tech}^{\text{share}}_s)
++ \mu_i + \nu_s + \epsilon_{i,s},
+$$
+
+where $\text{tech}^{\text{share}}_s$ is the 2019 share of state-$s$
+employment in Computer & Mathematical occupations (SOC 15-1xxx +
+15-2xxx), $\mu_i$ is an occupation fixed effect, and $\nu_s$ is a
+state fixed effect. The DiD coefficient $\beta_3$ tests whether the
+H4-info effect is *stronger* in tech-intensive states, as we would
+expect if the H_info-employment relationship is genuinely
+AI-mediated.
+
+The empirical result on the within-transformed (two-way FE)
+specification is $\hat{\beta}_3 = +1.40 \times 10^{-3}$ ($t = +0.53$,
+two-sided $p = 0.59$, one-sided $p = 0.30$). The sign matches the
+H4-info prediction but the effect is not statistically significant at
+conventional thresholds. Robustness with $H^{\text{info}}_{\text{Eloundou}}$
+yields the same qualitative pattern ($\hat{\beta}_3 = +1.91 \times 10^{-3}$,
+$p_{\text{one}} = 0.23$).
+
+The most defensible interpretation is that AI diffusion across US
+states between 2019 and 2024 has been *too uniform* to leave a
+detectable state-level moderation in BLS occupational employment, and
+that tech-occupation share is at best a noisy proxy for actual
+AI-tool adoption. The state-level DiD therefore neither strengthens
+nor weakens the H4-info claim established at the occupation level: it
+identifies a null state-by-state moderation effect, which is consistent
+with rapid and uniform diffusion of generative-AI tools through the
+US labor market post-2022.
+
+Cross-country generalisation against an ISCO-08-based panel and a more
+defensible state-level AI-adoption instrument (e.g., NAICS-51
+information-sector employment share, state-level AI patent density,
+firm-level GenAI adoption surveys) remain the central tasks for v2.4+.
 
 # 10. Conclusion
 
-This is v2.2. We have argued that the *informational task entropy* of
+This is v2.3. We have argued that the *informational task entropy* of
 an occupation, $H^{\text{info}}$, provides a partial but novel
 predictor of the occupation's temporal robustness against AI-driven
 substitution. The informational form is empirically supported on the
@@ -910,10 +937,14 @@ that selects the technology rather than a bug to be optimised away;
 but the *targeting* of that selection on the labour side is
 informational, not metabolic.
 
-Cross-country generalisation against an ISCO-08-based panel and
-state-level difference-in-differences identification of the
-AI-attributable component (§9.10) are the principal items of remaining
-work for v2.2+.
+A state-level DiD attempted in v2.3 (§9.10) yields a sign-correct but
+non-significant interaction ($\hat{\beta}_{\text{DiD}} = +1.4 \times
+10^{-3}$, one-sided $p = 0.30$), most plausibly because AI diffusion
+across US states between 2019 and 2024 has been too uniform to leave a
+detectable state-level moderation. Cross-country replication against
+an ISCO-08-based panel, and stronger state-level AI-adoption
+instruments (NAICS-51 share, AI patent density), remain the principal
+items of remaining work for v2.4+.
 
 # References
 
