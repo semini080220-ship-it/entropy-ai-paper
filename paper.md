@@ -6,45 +6,33 @@ author:
     email: semini080220@gmail.com
 date: 2026-05-11
 abstract: |
-  We propose a thermodynamic-informational reframing of the empirical
-  phenomenon of AI-driven labor displacement. Existing models of automation
-  exposure (Acemoglu and Restrepo 2020; Eloundou et al. 2023) explain which
-  occupations are technically substitutable, but leave residual variation
-  in the *speed* of substitution. We hypothesise that occupations
-  characterised by **high informational task entropy** --- high
-  variability, unpredictability, and non-routinizability of the work
-  activities --- are differentially preserved under AI-driven substitution;
-  the temporal order of displacement is inversely related to the
-  informational entropy of the occupational task profile. The companion
-  thermodynamic notion of entropy (human metabolic dissipation rate,
-  $E^{\text{thermo}}$) is a noisier secondary measure that is dominated by
-  non-AI confounders (COVID-era service-sector contraction, offshoring,
-  demographic ageing of the manual workforce). Building on the Maximum
-  Entropy Production Principle (Kleidon 2010; Martyushev and Seleznev
-  2006), Jeremy England's dissipative-adaptation programme (England 2013,
-  2015), and Shannon's informational entropy, we develop the framework,
-  propose operational definitions of both entropies, and test the joint
-  hypothesis on the full US BLS 2019--2024 occupational panel
-  ($N = 707$ detailed national cross-industry SOC codes). The
-  informational-entropy specification is strongly confirmed
-  ($\hat{\beta}_{H^{\text{info}}} > 0$, $p < 10^{-5}$ in the joint
-  specification, $p < 10^{-13}$ once AI exposure is conditioned out).
-  The thermodynamic-entropy specification is specification-dependent and
-  on its own runs against the prediction. We accordingly classify the
-  informational form of H4 as **empirically supported on the BLS panel
-  for 2019--2024** and the thermodynamic form as not supported on the
-  same data. In v2.1--v2.2 we address the principal critique of v2.0 (mechanical
-  co-dependence between the $1-\alpha$ $H^{\text{info}}$ proxy and the
-  GPT-exposure control) by reconstructing $H^{\text{info}}$ from
-  Autor-Levy-Murnane-style routine task intensities computed from O\*NET
-  task profiles *without* any AI-exposure information; the two proxies
-  are statistically independent ($r = +0.027$, $p = 0.47$), yet the
-  RTI-only specification yields $\hat{\beta} = +9.79 \times 10^{-3}$,
-  $t = +3.25$, one-sided $p = 6 \times 10^{-4}$. The H4-info prediction
-  therefore survives the strongest available robustness check: an
-  AI-content-free task-intensity measure predicts employment growth in
-  the predicted direction. We conclude with policy implications for
-  redistribution and for the regulation of AI energy consumption.
+  We propose a thermodynamic-informational reframing of AI-driven labor
+  displacement. We hypothesise that occupations of **high informational
+  task entropy** $H^{\text{info}}$ are differentially preserved under
+  AI-driven substitution. The hypothesis is tested on four
+  triangulated panels: US BLS occupational ($N = 707$), US
+  state$\times$occupation ($N = 27{,}356$), and EU-32 ISCO
+  cross-country at 1- and 2-digit resolutions ($N = 315$, $1{,}198$).
+  An AI-content-free $H^{\text{info}}$ proxy reconstructed from
+  Autor-Levy-Murnane routine-task intensities (O\*NET, independent of
+  any AI-exposure data) yields $\hat{\beta} > 0$ at $p < 10^{-3}$
+  alone and $p < 10^{-13}$ in the cross-country panel with country
+  fixed effects. A pre-trends placebo on four sliding 5-year windows
+  (2011--2024) shows the gradient was stable from 2011 to 2019 and
+  *statistically significantly accelerated only in 2019--2024*, the
+  window containing the post-ChatGPT generative-AI surge (DDD
+  interaction $t = +3.38$, $p_{\text{one}} = 4 \times 10^{-4}$).
+  Approximately 60 percent of the post-period coefficient is
+  AI-attributable acceleration; the residual 40 percent is the
+  pre-existing long-run routinizability gradient documented in
+  classical labour economics. Two independent country-level AI
+  instruments (Eurostat 2025 GenAI usage and WIPO AI patents 2021)
+  both find the gradient *stronger in AI-laggard than AI-frontier
+  countries*, consistent with a substitution-rate-of-residual-routine-stock
+  mechanism. We provide an Informational Resilience Index (IRI) for
+  698 US occupations, a companion Zenodo dataset, and a fully
+  reproducible code repository. Robustness checks across eight
+  proxies are reported in the Appendix.
 bibliography: references.bib
 ---
 
@@ -663,6 +651,17 @@ the construction code, is published as a companion Zenodo dataset
 and re-weighting; we do *not* claim IRI as the unique correct
 operationalisation of H4-info, only as a transparent first attempt.
 
+> **Reading guide.** Sections §9.6 -- §9.13 below comprise the
+> robustness battery: tautology break with an AI-free RTI proxy
+> (§9.6), Felten AIOE alternative proxy (§9.7), 2-digit NAICS
+> industry fixed effects (§9.8), enriched $E^{\text{thermo}}$
+> measurement (§9.9), state-level DiD identification (§9.10),
+> pre-trends placebo and DDD identification (§9.11), multi-window
+> sliding analysis (§9.12), and AI patent intensity instrument
+> (§9.13). Readers focused on the headline result may skip directly
+> to §10. Readers concerned with identification should read §9.11
+> and §9.12.
+
 ## 9.6 Tautology break (v2.1): RTI as AI-independent $H^{\text{info}}$ proxy
 
 The principal weakness of v2.0 (correctly identified in informal review)
@@ -1189,69 +1188,65 @@ Anthropic Economic Index) remain items for v3.1+.
 
 # 10. Conclusion
 
-This is v3.0. We have argued that the *informational task entropy* of
-an occupation, $H^{\text{info}}$, provides a partial but novel
-predictor of the occupation's temporal robustness against AI-driven
-substitution. The informational form is empirically supported on the
-US BLS 2019--2024 panel under multiple operationalisations.
+We have argued that the *informational task entropy* of an
+occupation, $H^{\text{info}}$, provides a partial but novel predictor
+of the occupation's temporal robustness against AI-driven
+substitution. The hypothesis is empirically supported across four
+triangulated panels --- US BLS occupational, US state $\times$
+occupational, EU-32 ISCO 1-digit, and EU-32 ISCO 2-digit --- with
+multiple independent $H^{\text{info}}$ proxies. The strongest
+defence against the tautology critique is an Autor-Levy-Murnane-style
+routine task intensity reconstructed from O\*NET *without any
+AI-exposure data*; this AI-content-free proxy is statistically
+independent of Eloundou's $1 - \alpha$ ($r = +0.027$, $p = 0.47$) yet
+predicts employment growth in the H4-direction at $\hat{\beta} =
++9.79 \times 10^{-3}$, $t = +3.25$, one-sided $p = 6 \times 10^{-4}$
+on the US panel and at $\hat{\beta} \approx +9 \times 10^{-3}$,
+$t = +7.49$, $p < 10^{-13}$ on the EU 2-digit panel with country
+fixed effects.
 
-The most defensible result, added in v2.1 (§9.6), uses an
-$H^{\text{info}}$ proxy reconstructed from Autor-Levy-Murnane-style
-routine task intensities (RTI) computed from O\*NET task profiles
-*without* any AI-exposure information. The Pearson correlation between
-this AI-independent RTI proxy and the original $1 - \alpha$ proxy is
-only $r = +0.027$ ($p = 0.47$): they are statistically independent.
-The RTI-only regression yields $\hat{\beta}_{H^{\text{info}}_{\text{RTI}}}
-= +9.79 \times 10^{-3}$, $t = +3.25$, one-sided $p = 6.0 \times 10^{-4}$.
-The H4-info prediction therefore survives the strongest possible
-robustness check: an entirely AI-content-free task-intensity measure
-predicts employment growth in the predicted direction on the same
-panel. This rules out the tautology objection that the v2.0 result
-merely re-labels a known AI-exposure pattern.
+A multi-window pre-trends placebo shows the H4-info gradient was
+present and stable from 2011--2019 ($\hat{\beta} \approx +4 \times
+10^{-3}$ across three pre-ChatGPT windows) and *significantly
+accelerated only in 2019--2024* (DDD $\hat{\beta}_{\text{int}} =
++5.7 \times 10^{-3}$, $t = +3.38$, $p_{\text{one}} = 4 \times
+10^{-4}$). Approximately 60 percent of the post-period coefficient
+is AI-attributable acceleration; the remaining 40 percent is the
+pre-existing long-run routinizability gradient (Autor 2003 onward).
 
-The thermodynamic form (H4-thermo) is not supported on the same data
-and is dominated by non-AI confounders. v2.1 enriches the
-$E^{\text{thermo}}$ proxy with strength, climbing, kneeling, bending,
-and repetitive-motion elements (§9.9); the negative-sign result
-persists ($\hat{\beta} = -9.3 \times 10^{-4}$, $p = 1.7 \times 10^{-4}$),
-ruling out the alternative that H4-thermo failed only because of a
-crude proxy.
+Two independent country-level AI instruments --- Eurostat 2025 GenAI
+usage and WIPO AI patent intensity 2021 --- both find the H4-info
+gradient *stronger in AI-laggard than AI-frontier countries*. We
+interpret this as a substitution-rate-of-residual-routine-stock
+mechanism: AI-frontier economies (Sweden, Germany, France, Denmark,
+Estonia) have already shed substantial routine occupational share
+through pre-2019 automation and offshoring; AI-laggard economies
+(Romania, Bulgaria, Croatia) entered 2019 with larger residual
+routine stocks for the post-2022 AI accelerator and the ongoing
+classical forces to act upon. The H4-info effect is thus
+*direction-universal* and *magnitude-conditional-on-residual-
+routine-stock*.
 
-Earlier-version checks remain in place: the prediction also persists
-under the Felten et al. AIOE alternative proxy ($r = +0.258$,
-$p < 10^{-10}$, §9.7) and under 2-digit NAICS industry fixed effects
-($\hat{\beta}_{\text{IRI}}$ at $t = +7.86$, $p = 1.7 \times 10^{-14}$,
-with IRI contributing $\Delta R^2 = +0.077$ on top of industry effects,
-§9.8). The policy implication is that redistribution and retraining
+The thermodynamic form (H4-thermo) is *not* supported on the same
+data and is dominated by non-AI confounders. A v2.1 enrichment of
+the $E^{\text{thermo}}$ proxy with strength and posture elements
+preserves the negative sign ($\hat{\beta} = -9.3 \times 10^{-4}$,
+$p = 1.7 \times 10^{-4}$).
+
+The policy implication is that redistribution and retraining
 programmes should be designed against the *informational* order of
 substitution: lowest-variability occupations first, then
-mid-variability, with high-variability occupations slowest to
-substitute. The high energy footprint of AI is, under MEPP, the feature
-that selects the technology rather than a bug to be optimised away;
-but the *targeting* of that selection on the labour side is
+mid-variability, with high-variability occupations the slowest to
+substitute. The high energy footprint of AI is, under MEPP, the
+feature that selects the technology rather than a bug to be optimised
+away; the *targeting* of that selection on the labour side is
 informational, not metabolic.
 
-A state-level DiD attempted in v2.3--v2.5 (§9.10) finds no significant
-state-by-state moderation under three independently-constructed
-AI-adoption proxies, but sub-sample analyses across all three confirm
-$\hat{\beta}_{H^{\text{info}}_{\text{RTI}}} \approx +7 \times 10^{-2}$
-($p < 10^{-15}$) in *every* AI-exposure subsample. v2.6--v2.7 extends the test to a 32--35-country EU/EEA Eurostat
-ISCO-08 panel at both 1-digit and 2-digit resolutions. The H4-info
-pattern replicates internationally at $\hat{\beta} \approx +9 \times
-10^{-3}$, $t = +7.49$, $p < 10^{-13}$ (2-digit, country FE controlled).
-A v2.7 interaction with country-level 2025 GenAI usage from the
-Eurostat ICT survey reveals a *negative* moderation
-($\hat{\beta}_{\text{interaction}} = -2.4 \times 10^{-3}$,
-$p_{\text{two}} = 0.057$), i.e., the H4-info effect is *stronger* in
-countries with *lower* current GenAI usage --- consistent with the
-view that H4-info captures a deeper routinizability gradient
-(automation, offshoring, demographic ageing) that AI accelerates but
-does not solely drive. The H4-info effect is therefore *universal*
-in direction across US states, US occupations, and 32 European
-countries; the *magnitude* is shaped by national labour-market
-structure that GenAI usage correlates with. A multi-period, firm-level
-AI-investment instrument is required to fully separate these channels
-and is the principal item for v2.8+.
+The §9 robustness checks (§9.6--§9.13) collectively span eight
+proxies and four panels. Firm-level AI-adoption instruments
+(Bick-Blandin RPS extensions, Anthropic Economic Index) and a
+pre-registered specification grid remain the principal items for
+v3.1+.
 
 # References
 
