@@ -33,7 +33,7 @@ abstract: |
   on its own runs against the prediction. We accordingly classify the
   informational form of H4 as **empirically supported on the BLS panel
   for 2019--2024** and the thermodynamic form as not supported on the
-  same data. In v2.1 we address the principal critique of v2.0 (mechanical
+  same data. In v2.1--v2.2 we address the principal critique of v2.0 (mechanical
   co-dependence between the $1-\alpha$ $H^{\text{info}}$ proxy and the
   GPT-exposure control) by reconstructing $H^{\text{info}}$ from
   Autor-Levy-Murnane-style routine task intensities computed from O\*NET
@@ -721,6 +721,34 @@ and $H^{\text{info}}_{\text{Eloundou}}$ keeps both significant
 (RTI: $t = +3.19$; Eloundou: $t = +2.62$), with the RTI loading slightly
 larger. Each proxy carries information the other lacks.
 
+**IRI v2.** Replacing $H^{\text{info}}_{\text{Eloundou}}$ with
+$H^{\text{info}}_{\text{RTI}}$ in the IRI definition (§9 main equation)
+gives a fully AI-free composite index:
+
+$$
+\text{IRI}_{2,i} = z(H^{\text{info}}_{\text{RTI},i})
++ z(\text{JobZone}_i) + z(\log w_i).
+$$
+
+The IRI v2 score correlates with subsequent annualised employment
+growth at $r = +0.275$ ($p = 1.3 \times 10^{-13}$, Spearman $\rho =
++0.322$, $p = 3.0 \times 10^{-18}$, $N = 698$). The cross-correlation
+between IRI v2 and the original IRI v1 is $r = +0.834$, indicating that
+the two indices order occupations similarly even though they share no
+direct AI-exposure component. The IRI v2 top-10 occupations are Chief
+Executives, Marketing Managers, Mathematicians, Sales Managers,
+Economics/Engineering Teachers, Political Scientists, Astronomers,
+Economists, and Financial Managers; the bottom-10 are Food Cooking
+Machine Operators, Reservation Clerks, Veterinary Assistants, Couriers,
+Orderlies, Machine Feeders, Cleaning-Equipment Operators, Medical
+Equipment Preparers, Data Entry Keyers, and Foundry Workers. The
+extreme cells of the AI-free IRI v2 are intuitively reasonable and
+match the AI-derived IRI v1 in spirit.
+
+The full IRI v2 score table for the same $N = 698$ occupations is
+published as a v2 dataset alongside the v1 IRI dataset; replication and
+re-weighting are explicitly invited.
+
 ## 9.7 Multi-source robustness (v1.2): Felten AIOE as alternative proxy
 
 The headline IRI uses the Eloundou et al. $\alpha_i$ score
@@ -840,7 +868,7 @@ defer this to v2.2+.
 
 # 10. Conclusion
 
-This is v2.1. We have argued that the *informational task entropy* of
+This is v2.2. We have argued that the *informational task entropy* of
 an occupation, $H^{\text{info}}$, provides a partial but novel
 predictor of the occupation's temporal robustness against AI-driven
 substitution. The informational form is empirically supported on the

@@ -1,0 +1,142 @@
+{
+  "v2.2_IRI_v2": {
+    "N": 698,
+    "formula": "IRI_v2 = z(H_info_RTI) + z(JobZone) + z(log wage)",
+    "primary_proxy": "H_info_RTI = -RTI (AI-content-free, from O*NET only)",
+    "validation": {
+      "pearson_r": 0.27532893984818074,
+      "p_pearson": 1.3149738545398514e-13,
+      "spearman_rho": 0.32145623619387,
+      "p_spearman": 3.04496277318732e-18
+    },
+    "comparison_to_v1": {
+      "IRI_v1_r": 0.32794071616288134,
+      "IRI_v1_p": 5.80347553948151e-19,
+      "cross_correlation": 0.8341907922481819
+    },
+    "top10": [
+      {
+        "OCC_CODE": "11-1011",
+        "title_2024": "Chief Executives",
+        "IRI_v2": 7.184434551782117,
+        "IRI_v2_pct": 100.0
+      },
+      {
+        "OCC_CODE": "11-2021",
+        "title_2024": "Marketing Managers",
+        "IRI_v2": 6.484251098159804,
+        "IRI_v2_pct": 99.8567335243553
+      },
+      {
+        "OCC_CODE": "15-2021",
+        "title_2024": "Mathematicians",
+        "IRI_v2": 5.882435674139046,
+        "IRI_v2_pct": 99.7134670487106
+      },
+      {
+        "OCC_CODE": "11-2022",
+        "title_2024": "Sales Managers",
+        "IRI_v2": 5.801332749676906,
+        "IRI_v2_pct": 99.5702005730659
+      },
+      {
+        "OCC_CODE": "25-1063",
+        "title_2024": "Economics Teachers, Postsecondary",
+        "IRI_v2": 5.611316216715085,
+        "IRI_v2_pct": 99.42693409742121
+      },
+      {
+        "OCC_CODE": "19-3094",
+        "title_2024": "Political Scientists",
+        "IRI_v2": 5.578903157433405,
+        "IRI_v2_pct": 99.2836676217765
+      },
+      {
+        "OCC_CODE": "19-2011",
+        "title_2024": "Astronomers",
+        "IRI_v2": 5.543115380529921,
+        "IRI_v2_pct": 99.14040114613181
+      },
+      {
+        "OCC_CODE": "25-1032",
+        "title_2024": "Engineering Teachers, Postsecondary",
+        "IRI_v2": 5.4232677863132475,
+        "IRI_v2_pct": 98.99713467048711
+      },
+      {
+        "OCC_CODE": "19-3011",
+        "title_2024": "Economists",
+        "IRI_v2": 5.3851238227323694,
+        "IRI_v2_pct": 98.8538681948424
+      },
+      {
+        "OCC_CODE": "11-3031",
+        "title_2024": "Financial Managers",
+        "IRI_v2": 5.367746000367303,
+        "IRI_v2_pct": 98.71060171919771
+      }
+    ],
+    "bottom10": [
+      {
+        "OCC_CODE": "51-3093",
+        "title_2024": "Food Cooking Machine Operators and Tenders",
+        "IRI_v2": -4.534866050342034,
+        "IRI_v2_pct": 0.14326647564469913
+      },
+      {
+        "OCC_CODE": "43-4181",
+        "title_2024": "Reservation and Transportation Ticket Agents and Travel Clerks",
+        "IRI_v2": -4.4775538179580385,
+        "IRI_v2_pct": 0.28653295128939826
+      },
+      {
+        "OCC_CODE": "31-9096",
+        "title_2024": "Veterinary Assistants and Laboratory Animal Caretakers",
+        "IRI_v2": -4.26459628228702,
+        "IRI_v2_pct": 0.42979942693409745
+      },
+      {
+        "OCC_CODE": "43-5021",
+        "title_2024": "Couriers and Messengers",
+        "IRI_v2": -4.116542446501487,
+        "IRI_v2_pct": 0.5730659025787965
+      },
+      {
+        "OCC_CODE": "31-1132",
+        "title_2024": "Orderlies",
+        "IRI_v2": -4.078570559055037,
+        "IRI_v2_pct": 0.7163323782234957
+      },
+      {
+        "OCC_CODE": "53-7063",
+        "title_2024": "Machine Feeders and Offbearers",
+        "IRI_v2": -4.031987198800255,
+        "IRI_v2_pct": 0.8595988538681949
+      },
+      {
+        "OCC_CODE": "51-9192",
+        "title_2024": "Cleaning, Washing, and Metal Pickling Equipment Operators and Tenders",
+        "IRI_v2": -3.9306717129370963,
+        "IRI_v2_pct": 1.002865329512894
+      },
+      {
+        "OCC_CODE": "31-9093",
+        "title_2024": "Medical Equipment Preparers",
+        "IRI_v2": -3.8376619867851387,
+        "IRI_v2_pct": 1.146131805157593
+      },
+      {
+        "OCC_CODE": "43-9021",
+        "title_2024": "Data Entry Keyers",
+        "IRI_v2": -3.8211386925265165,
+        "IRI_v2_pct": 1.2893982808022924
+      },
+      {
+        "OCC_CODE": "51-4071",
+        "title_2024": "Foundry Mold and Coremakers",
+        "IRI_v2": -3.7933472560145836,
+        "IRI_v2_pct": 1.4326647564469914
+      }
+    ]
+  }
+}
