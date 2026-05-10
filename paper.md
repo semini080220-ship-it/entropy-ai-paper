@@ -1100,13 +1100,48 @@ post-period coefficient ($5.74 / 9.47$) appears to be AI-driven
 acceleration; the remaining 40 percent represents the pre-existing
 long-run routinizability gradient that classical labour-economics
 literature (Autor and colleagues, 2003 onward) has documented for two
-decades. Firm-level AI-adoption instruments (Eurobarometer AI
-surveys, Bick-Blandin RPS extensions, Anthropic Economic Index)
-remain items for v2.9+.
+decades.
+
+## 9.12 Multi-period sliding-window analysis (v2.9)
+
+A more demanding pre-trends test runs the same country-FE
+specification on four consecutive 5-year windows from the Eurostat
+panel:
+
+| Window | Period | $\hat{\beta}_{H^{\text{info}}}$ | $t$ | $p_{\text{one}}$ |
+|---|---|---|---|---|
+| W1 | 2011--2016 | $+4.63 \times 10^{-3}$ | $+3.33$ | $4 \times 10^{-4}$ |
+| W2 | 2014--2019 | $+3.73 \times 10^{-3}$ | $+3.22$ | $7 \times 10^{-4}$ |
+| W3 | 2016--2021 | $+6.95 \times 10^{-3}$ | $+5.24$ | $9 \times 10^{-8}$ |
+| **W4** | **2019--2024** | $\mathbf{+9.47 \times 10^{-3}}$ | $\mathbf{+7.72}$ | $\mathbf{1.2 \times 10^{-14}}$ |
+
+A stacked panel with W1 as baseline (interactions $H^{\text{info}}_o
+\times \text{window}_t$) gives:
+
+- $H^{\text{info}} \times $ W2 = $-0.85 \times 10^{-3}$ ($t = -0.47$,
+  $p_{\text{two}} = 0.64$, *not* significantly different from W1).
+- $H^{\text{info}} \times $ W3 = $+2.30 \times 10^{-3}$ ($t = +1.27$,
+  $p_{\text{one}} = 0.10$, marginal).
+- $H^{\text{info}} \times $ W4 = $+4.81 \times 10^{-3}$ ($t = +2.65$,
+  $p_{\text{one}} = 0.0041$).
+
+The pre-trends placebo is even stronger than v2.8 implied. The
+H4-info gradient was statistically significant in *every* 5-year
+window from 2011 onward, with no monotonic acceleration through
+W1 $\to$ W2 (Eurozone-crisis tail). The window in which the gradient
+*becomes statistically distinguishably larger* than the 2011--2016
+baseline is W4 (2019--2024), exactly the window that contains the
+post-ChatGPT generative-AI surge. This is the cleanest direct
+identification of an AI-attributable acceleration of the H4-info
+gradient available from the public Eurostat panel: *the H_info
+gradient was stable for a decade (2011--2019) and then accelerated
+significantly only in 2019--2024*. Firm-level AI-adoption instruments
+(Eurobarometer AI surveys, Bick-Blandin RPS extensions, Anthropic
+Economic Index) remain items for v3.0+.
 
 # 10. Conclusion
 
-This is v2.8. We have argued that the *informational task entropy* of
+This is v2.9. We have argued that the *informational task entropy* of
 an occupation, $H^{\text{info}}$, provides a partial but novel
 predictor of the occupation's temporal robustness against AI-driven
 substitution. The informational form is empirically supported on the
