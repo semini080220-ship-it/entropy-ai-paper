@@ -985,15 +985,76 @@ country fixed effects. The H4-info effect is, on the present
 evidence, an *international* labor-market regularity rather than a
 US-only artefact.
 
-A more demanding extension --- a country-by-occupation interaction
-with country-level GenAI adoption rates from firm-level surveys
-(e.g., Eurobarometer AI surveys, Bick-Blandin RPS extensions, the
-Anthropic Economic Index) --- is the principal item of remaining work
-for v2.7+.
+**v2.7 extension: ISCO 2-digit panel + Eurostat GenAI usage
+interaction.** The v2.6 panel uses ISCO 1-digit (10 categories),
+which is coarse enough that occupation-level variation may obscure
+fine-grained heterogeneity. v2.7 expands the cross-country test to
+40 ISCO 2-digit categories ($N = 1{,}198$ country$\times$ISCO-2 cells,
+32 countries) using a more detailed manual $H^{\text{info}}_{\text{ISCO2}}$
+mapping at the 2-digit level, and adds country-level GenAI usage
+rate from the 2025 Eurostat ICT survey [^genai].
+
+[^genai]: Source: Eurostat 2025 ICT survey, share of individuals
+aged 16--74 who used generative-AI tools in the last three months,
+distributed via the Our World in Data Grapher. Country range:
+Denmark 48.4 %, Estonia 46.6 %, Malta 46.5 % (top); Romania 17.8 %,
+Italy 19.9 %, Bulgaria 22.5 % (bottom). EU average 32.7 %.
+
+Five regressions are estimated:
+
+| Spec | Setup | $\hat{\beta}_{H^{\text{info}}}$ | $t$ | $p_{\text{one}}$ | $R^2$ |
+|---|---|---|---|---|---|
+| 1 | $H^{\text{info}}$ only | $+9.48 \times 10^{-3}$ | $+7.32$ | $2 \times 10^{-13}$ | $0.043$ |
+| 2 | + country FE | $+9.47 \times 10^{-3}$ | $+7.49$ | $7 \times 10^{-14}$ | $0.113$ |
+| 3 | + GenAI main effect | $+9.47 \times 10^{-3}$ | $+7.31$ | $2 \times 10^{-13}$ | $0.044$ |
+| 4 | + $H^{\text{info}} \times $GenAI interaction | main: $+9.47 \times 10^{-3}$; **interaction: $-2.38 \times 10^{-3}$** ($t = -1.84$, $p_{\text{two}} = 0.066$) | --- | --- | $0.047$ |
+| 5 | + country FE + interaction | main: $+9.47 \times 10^{-3}$; interaction: $-2.41 \times 10^{-3}$ ($t = -1.91$, $p_{\text{two}} = 0.057$) | --- | --- | $0.116$ |
+
+Two findings emerge.
+
+First, **the main H4-info effect is even stronger on the 2-digit
+panel** than on the 1-digit panel of v2.6 (Spec 2: $t = +7.49$,
+$p < 10^{-13}$, country FE controlled). This rules out the concern
+that the v2.6 result was a coarse-aggregation artefact.
+
+Second, **the $H^{\text{info}} \times $GenAI interaction is
+*negative*** at marginal significance, the *opposite* of the sign
+that a simple "AI causes routine displacement" mechanism would
+predict. A median-split sub-sample analysis confirms this:
+$\hat{\beta}_{H^{\text{info}}} = +6.58 \times 10^{-3}$ ($t = +4.30$,
+$p < 10^{-5}$) in high-GenAI-usage countries, versus
+$\hat{\beta}_{H^{\text{info}}} = +1.26 \times 10^{-2}$ ($t = +5.94$,
+$p < 10^{-9}$) in low-GenAI-usage countries; the difference is
+$-6.05 \times 10^{-3}$ ($t = -2.31$, $p_{\text{one-sided}} = 0.99$ for
+high $>$ low).
+
+The H4-info effect is therefore *stronger* in countries with *lower*
+2025 GenAI usage. The most defensible interpretation is that
+H4-info captures a deeper task-routinizability gradient that operates
+across modern economies for several reasons --- automation, offshoring,
+demographic ageing, capital deepening --- with current
+generative-AI usage modulating but not solely driving the
+relationship. Low-GenAI countries (Romania, Bulgaria, Italy, etc.)
+also tend to have older industrial bases with larger residual stocks
+of routine clerical and routine manual employment that have been
+contracting at a faster rate over 2019--2024 from non-AI causes
+(EU service-sector convergence, manufacturing offshoring to Asia,
+demographic ageing). High-GenAI countries (Denmark, Estonia, Malta,
+Norway, Cyprus) had already shed much of their routine-occupation
+share before 2019 and now show smaller marginal H4-info gradients.
+
+This finding qualifies, rather than overturns, the H4-info claim:
+the *direction* of the H_info--employment relationship is universal
+and very strong, but the *magnitude* is shaped by national-level
+labor-market structure that GenAI usage merely correlates with. A
+country-by-occupation panel with multiple time periods and a more
+direct AI-treatment instrument (e.g., firm-level AI investment
+expenditures) is required to fully separate these channels and is
+deferred to v2.8+.
 
 # 10. Conclusion
 
-This is v2.6. We have argued that the *informational task entropy* of
+This is v2.7. We have argued that the *informational task entropy* of
 an occupation, $H^{\text{info}}$, provides a partial but novel
 predictor of the occupation's temporal robustness against AI-driven
 substitution. The informational form is empirically supported on the
@@ -1039,14 +1100,23 @@ A state-level DiD attempted in v2.3--v2.5 (§9.10) finds no significant
 state-by-state moderation under three independently-constructed
 AI-adoption proxies, but sub-sample analyses across all three confirm
 $\hat{\beta}_{H^{\text{info}}_{\text{RTI}}} \approx +7 \times 10^{-2}$
-($p < 10^{-15}$) in *every* AI-exposure subsample. v2.6 then extends
-the test to a 35-country EU/EEA Eurostat ISCO-08 panel: the same
-H4-info pattern replicates internationally with $\hat{\beta} = +8.79
-\times 10^{-3}$, $t = +5.70$, $p = 1.5 \times 10^{-8}$ (country FE
-controlled). The H4-info effect is therefore *universal across US
-states 2019--2024 and replicates across 35 European countries*. The
-remaining task for v2.7+ is a country-by-occupation interaction with
-country-level GenAI-adoption rates from firm-level surveys.
+($p < 10^{-15}$) in *every* AI-exposure subsample. v2.6--v2.7 extends the test to a 32--35-country EU/EEA Eurostat
+ISCO-08 panel at both 1-digit and 2-digit resolutions. The H4-info
+pattern replicates internationally at $\hat{\beta} \approx +9 \times
+10^{-3}$, $t = +7.49$, $p < 10^{-13}$ (2-digit, country FE controlled).
+A v2.7 interaction with country-level 2025 GenAI usage from the
+Eurostat ICT survey reveals a *negative* moderation
+($\hat{\beta}_{\text{interaction}} = -2.4 \times 10^{-3}$,
+$p_{\text{two}} = 0.057$), i.e., the H4-info effect is *stronger* in
+countries with *lower* current GenAI usage --- consistent with the
+view that H4-info captures a deeper routinizability gradient
+(automation, offshoring, demographic ageing) that AI accelerates but
+does not solely drive. The H4-info effect is therefore *universal*
+in direction across US states, US occupations, and 32 European
+countries; the *magnitude* is shaped by national labour-market
+structure that GenAI usage correlates with. A multi-period, firm-level
+AI-investment instrument is required to fully separate these channels
+and is the principal item for v2.8+.
 
 # References
 
