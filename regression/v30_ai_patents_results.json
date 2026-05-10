@@ -1,0 +1,22 @@
+{
+  "v3.0_ai_patents": {
+    "N": 863,
+    "n_countries": 23,
+    "ai_patent_data": "OWID AI patents per million 2021 (WIPO via Stanford lineage)",
+    "spec_1_baseline": {
+      "beta": 0.009994011298840734,
+      "t": 6.9305669845745586,
+      "p_one": 4.1778802639669266e-12,
+      "R2": 0.11293093841735602
+    },
+    "spec_2_interaction": {
+      "beta_H_info": 0.009980164713088269,
+      "beta_interaction": -0.0018304711630238828,
+      "se_interaction": 0.0014688037679030576,
+      "t_interaction": -1.2462326166531836,
+      "p_two_interaction": 0.21302727537980415,
+      "p_one_positive_interaction": 0.8934863623100979,
+      "R2": 0.11457193430317358
+    }
+  }
+}
