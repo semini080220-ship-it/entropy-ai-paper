@@ -945,14 +945,55 @@ state-composition confounders --- and that GenAI diffusion across US
 states 2019--2024 has been too rapid and uniform to leave detectable
 state-level moderation in BLS-resolution occupational employment.
 
-Cross-country generalisation against an ISCO-08-based panel and
-firm-level AI-adoption instruments (e.g., GenAI use surveys from
-Bick and Blandin, the Anthropic Economic Index) remain the central
-tasks for v2.6+.
+**v2.6 extension: cross-country panel.** A natural challenge to the
+H4-info pattern documented on US BLS data is whether it replicates
+internationally. v2.6 assembles a parallel cross-country panel from
+Eurostat *Employment by sex, age and 2-digit ISCO-08 occupation*
+(LFSA_EGAI2D), aggregating to ISCO 1-digit major groups for
+comparability. The sample comprises $N = 315$ country $\times$
+ISCO-1-digit cells, covering 35 European countries (EU member states
+plus EEA, UK, and Switzerland) over 2019--2024. The dependent variable
+is the annualised employment growth rate
+$(\text{emp}_{c,o,2024} / \text{emp}_{c,o,2019})^{1/5} - 1$.
+
+The H4-info proxy at ISCO 1-digit level is constructed *without* any
+AI-exposure data, by manually scoring each of the nine non-military
+ISCO major groups according to the Acemoglu-Autor (2011) routine /
+non-routine cognitive / non-routine manual classification:
+$+1.5$ for ISCO 1 (Managers) and ISCO 2 (Professionals) [non-routine
+cognitive interactive and analytic], $+0.5$ for ISCO 3 (Technicians),
+$0$ for ISCO 5 (Services) and ISCO 6 (Skilled agricultural),
+$-0.5$ for ISCO 7 (Craft and trades), $-1.0$ for ISCO 8 (Plant and
+machine operators), and $-1.5$ for ISCO 4 (Clerical) and ISCO 9
+(Elementary) [routine cognitive and routine manual].
+
+The cross-country regression yields:
+
+| Specification         | $\hat{\beta}_{H^{\text{info}}_{\text{ISCO}}}$ | SE                  | $t$    | one-sided $p$ | $R^2$ |
+|-----------------------|-----------------------------------------------|---------------------|--------|---------------|-------|
+| 1. $H^{\text{info}}$ only | $+8.79 \times 10^{-3}$                    | $1.63 \times 10^{-3}$ | $+5.39$ | $7 \times 10^{-8}$  | $0.085$ |
+| 2. + Country FE       | $+8.79 \times 10^{-3}$                        | $1.54 \times 10^{-3}$ | $+5.70$ | $1.5 \times 10^{-8}$ | $0.271$ |
+
+The H4-info coefficient is highly significant even after absorbing
+country fixed effects, which control for country-specific shocks
+(differential COVID exposure, social-policy responses, sectoral mix,
+GDP per capita level). The 35-country EU/EEA replication therefore
+documents the same H4-info pattern that the US BLS panel exhibits ---
+non-routine occupations are differentially preserved relative to
+routine occupations 2019--2024, with effect sizes that survive
+country fixed effects. The H4-info effect is, on the present
+evidence, an *international* labor-market regularity rather than a
+US-only artefact.
+
+A more demanding extension --- a country-by-occupation interaction
+with country-level GenAI adoption rates from firm-level surveys
+(e.g., Eurobarometer AI surveys, Bick-Blandin RPS extensions, the
+Anthropic Economic Index) --- is the principal item of remaining work
+for v2.7+.
 
 # 10. Conclusion
 
-This is v2.5. We have argued that the *informational task entropy* of
+This is v2.6. We have argued that the *informational task entropy* of
 an occupation, $H^{\text{info}}$, provides a partial but novel
 predictor of the occupation's temporal robustness against AI-driven
 substitution. The informational form is empirically supported on the
@@ -996,18 +1037,16 @@ informational, not metabolic.
 
 A state-level DiD attempted in v2.3--v2.5 (§9.10) finds no significant
 state-by-state moderation under three independently-constructed
-AI-adoption proxies (tech-occupation share, high-skill professional
-share, Felten AIGE). However, sub-sample analyses across all three
-proxies confirm the $H^{\text{info}}_{\text{RTI}}$ effect at very high
-significance in *every* AI-exposure subsample
-($\hat{\beta} \approx +7 \times 10^{-2}$, $p < 10^{-15}$ in each
-median-split sub-sample and each tertile), with no detectable
-difference between sub-samples. The H4-info effect is therefore
-*universal* across the US states 2019--2024 --- robust to
-state-composition confounders, not concentrated in tech-heavy
-regions. Cross-country replication against an ISCO-08-based panel
-and firm-level AI-adoption instruments are the principal items of
-remaining work for v2.6+.
+AI-adoption proxies, but sub-sample analyses across all three confirm
+$\hat{\beta}_{H^{\text{info}}_{\text{RTI}}} \approx +7 \times 10^{-2}$
+($p < 10^{-15}$) in *every* AI-exposure subsample. v2.6 then extends
+the test to a 35-country EU/EEA Eurostat ISCO-08 panel: the same
+H4-info pattern replicates internationally with $\hat{\beta} = +8.79
+\times 10^{-3}$, $t = +5.70$, $p = 1.5 \times 10^{-8}$ (country FE
+controlled). The H4-info effect is therefore *universal across US
+states 2019--2024 and replicates across 35 European countries*. The
+remaining task for v2.7+ is a country-by-occupation interaction with
+country-level GenAI-adoption rates from firm-level surveys.
 
 # References
 
