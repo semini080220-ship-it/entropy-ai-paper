@@ -878,24 +878,44 @@ conventional thresholds. Robustness with $H^{\text{info}}_{\text{Eloundou}}$
 yields the same qualitative pattern ($\hat{\beta}_3 = +1.91 \times 10^{-3}$,
 $p_{\text{one}} = 0.23$).
 
-The most defensible interpretation is that AI diffusion across US
-states between 2019 and 2024 has been *too uniform* to leave a
-detectable state-level moderation in BLS occupational employment, and
-that tech-occupation share is at best a noisy proxy for actual
-AI-tool adoption. The state-level DiD therefore neither strengthens
-nor weakens the H4-info claim established at the occupation level: it
-identifies a null state-by-state moderation effect, which is consistent
-with rapid and uniform diffusion of generative-AI tools through the
-US labor market post-2022.
+**v2.4 extension.** We replicate the DiD specification with two
+additional state-level AI-adoption proxies: (P2) the share of
+state-$s$ employment in high-skill professional occupations
+(SOC 11-1xxx Managers, 19-xxxx Scientists, 23-xxxx Legal), and (P3) a
+$z$-score composite of P1 and P2. The DiD interaction remains
+non-significant under all three proxies (P1: $\hat{\beta}_3 = +1.40
+\times 10^{-3}$; P2: $-1.34 \times 10^{-3}$; P3: $+0.24 \times 10^{-3}$).
 
-Cross-country generalisation against an ISCO-08-based panel and a more
-defensible state-level AI-adoption instrument (e.g., NAICS-51
-information-sector employment share, state-level AI patent density,
-firm-level GenAI adoption surveys) remain the central tasks for v2.4+.
+Crucially, however, a **sub-sample analysis** by composite-AI median
+split yields a much sharper picture. Restricting the panel to states
+with above-median composite AI-adoption gives
+$\hat{\beta}_{H^{\text{info}}_{\text{RTI}}} = +7.01 \times 10^{-2}$
+($N = 14{,}111$, $t = +10.96$, $p < 10^{-20}$). Restricting to
+below-median states gives $\hat{\beta}_{H^{\text{info}}_{\text{RTI}}}
+= +7.14 \times 10^{-2}$ ($N = 13{,}245$, $t = +10.60$, $p < 10^{-20}$).
+The two sub-sample coefficients differ by only $-1.26 \times 10^{-3}$
+($t = -0.14$, one-sided $p = 0.55$).
+
+The H4-info effect is therefore present at very high significance in
+*both* high-AI and low-AI state subsamples, with no detectable
+moderation by state-level AI adoption. This pattern admits two
+non-exclusive interpretations: (i) GenAI diffusion across US states
+2019--2024 has been rapid and uniform, leaving no detectable
+state-by-state moderation; or (ii) BLS-derived state-level
+AI-adoption proxies (occupational composition) are too crude to
+capture the true cross-state variation in actual AI tool usage.
+Either way, the H4-info effect is robust to state-composition
+confounders --- it cannot be attributed to a sub-set of tech-heavy
+states driving the entire occupation-level result.
+
+Cross-country generalisation against an ISCO-08-based panel and
+firm-level AI-adoption instruments (e.g., GenAI use surveys from
+Bick and Blandin, the Anthropic Economic Index) remain the central
+tasks for v2.5+.
 
 # 10. Conclusion
 
-This is v2.3. We have argued that the *informational task entropy* of
+This is v2.4. We have argued that the *informational task entropy* of
 an occupation, $H^{\text{info}}$, provides a partial but novel
 predictor of the occupation's temporal robustness against AI-driven
 substitution. The informational form is empirically supported on the
@@ -937,14 +957,17 @@ that selects the technology rather than a bug to be optimised away;
 but the *targeting* of that selection on the labour side is
 informational, not metabolic.
 
-A state-level DiD attempted in v2.3 (§9.10) yields a sign-correct but
-non-significant interaction ($\hat{\beta}_{\text{DiD}} = +1.4 \times
-10^{-3}$, one-sided $p = 0.30$), most plausibly because AI diffusion
-across US states between 2019 and 2024 has been too uniform to leave a
-detectable state-level moderation. Cross-country replication against
-an ISCO-08-based panel, and stronger state-level AI-adoption
-instruments (NAICS-51 share, AI patent density), remain the principal
-items of remaining work for v2.4+.
+A state-level DiD attempted in v2.3--v2.4 (§9.10) finds no significant
+state-by-state moderation under three different AI-adoption proxies.
+However, a sub-sample analysis added in v2.4 finds the
+$H^{\text{info}}_{\text{RTI}}$ effect is present at very high
+significance in *both* high-AI and low-AI state subsamples
+($\hat{\beta} \approx +7.0 \times 10^{-2}$, $p < 10^{-20}$ in each),
+with no detectable difference between them. The H4-info effect is
+therefore robust to state-composition confounders. Cross-country
+replication against an ISCO-08-based panel and firm-level
+AI-adoption instruments remain the principal items of remaining work
+for v2.5+.
 
 # References
 
