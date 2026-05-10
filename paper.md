@@ -33,10 +33,18 @@ abstract: |
   on its own runs against the prediction. We accordingly classify the
   informational form of H4 as **empirically supported on the BLS panel
   for 2019--2024** and the thermodynamic form as not supported on the
-  same data. The cosmological proposals of Smolin (1992) and Crane (1994)
-  inspire but do not constrain the empirical claim. We conclude with
-  policy implications for redistribution and for the regulation of AI
-  energy consumption.
+  same data. In v2.1 we address the principal critique of v2.0 (mechanical
+  co-dependence between the $1-\alpha$ $H^{\text{info}}$ proxy and the
+  GPT-exposure control) by reconstructing $H^{\text{info}}$ from
+  Autor-Levy-Murnane-style routine task intensities computed from O\*NET
+  task profiles *without* any AI-exposure information; the two proxies
+  are statistically independent ($r = +0.027$, $p = 0.47$), yet the
+  RTI-only specification yields $\hat{\beta} = +9.79 \times 10^{-3}$,
+  $t = +3.25$, one-sided $p = 6 \times 10^{-4}$. The H4-info prediction
+  therefore survives the strongest available robustness check: an
+  AI-content-free task-intensity measure predicts employment growth in
+  the predicted direction. We conclude with policy implications for
+  redistribution and for the regulation of AI energy consumption.
 bibliography: references.bib
 ---
 
@@ -75,11 +83,14 @@ to $E^{\text{thermo}}_i$ --- is offered as a secondary, weaker version of
 the same hypothesis; we test both and find that the data strongly support
 the informational form and do not support the thermodynamic form.
 
-We make no metaphysical commitment about cosmological purpose. Speculative
-cosmological proposals --- Smolin's Cosmological Natural Selection
-[@smolin1992did] and Crane's Meduso-anthropic Principle [@crane1994possible]
---- appear in our motivation only. The empirical claim of this paper is
-restricted to a falsifiable correlation in labor-market data. Section 2
+The empirical claim of this paper is restricted to a falsifiable
+correlation in labor-market data.[^cosmology]
+
+[^cosmology]: Speculative thermodynamic-cosmological proposals (e.g.,
+Smolin's Cosmological Natural Selection, @smolin1992did; Crane's
+Meduso-anthropic Principle, @crane1994possible) inspired the present
+framing during early drafting but do *not* constrain any conclusion
+below. We do not endorse or engage with those proposals further. Section 2
 sets out the theoretical framework. Section 3 states four nested hypotheses,
 of which only the last (H4) is the empirical contribution. Section 4
 proposes operational definitions. Section 5 reports the empirical results
@@ -102,8 +113,8 @@ proxy ($H^{\text{info}}_i = 1 - \alpha_i$, where $\alpha_i$ is the
 Eloundou et al. direct-LLM-exposure score) and against a parallel
 metabolic-entropy proxy ($E^{\text{thermo}}_i$ from O\*NET Work Context
 sitting/standing/walking time). The empirical content of the paper rests
-on these regressions; the broader thermodynamic and cosmological framing
-is heuristic and not load-bearing.
+on these regressions; the broader thermodynamic framing is heuristic and
+not load-bearing.
 
 # 2. Theoretical Framework
 
@@ -147,19 +158,7 @@ These claims are well-supported in their domains. The contribution of the
 present paper is to ask whether the same principle extends to *artificial*
 information-processing infrastructures.
 
-## 2.3 Cosmological Motivation (Untestable, Non-Load-Bearing)
-
-Two cosmological proposals motivate --- but do not determine --- our
-framing. Smolin [@smolin1992did] postulates that black holes spawn baby
-universes whose physical constants are slightly perturbed; universes that
-produce many black holes are reproductively favoured. Crane
-[@crane1994possible] speculates further that intelligent life may
-engineer artificial black holes, accelerating cosmological reproduction.
-Both proposals are, at present, untestable, and we do not endorse them.
-We invoke them only as theoretical inspiration. **No conclusion in this
-paper depends on the cosmological proposals being correct.**
-
-## 2.4 Two Entropies for Occupations
+## 2.3 Two Entropies for Occupations
 
 A central conceptual move of this paper is to distinguish two senses in
 which an occupation can be said to have "high entropy".
@@ -192,7 +191,7 @@ high-$H^{\text{info}}$ (every case is different). The empirical question
 of §5 is which entropy --- if either --- predicts occupational survival
 under AI substitution.
 
-## 2.5 The Energy Footprint of Artificial Intelligence
+## 2.4 The Energy Footprint of Artificial Intelligence
 
 The deployment of large AI systems imposes a substantial and accelerating
 energy load. The International Energy Agency [@iea2024electricity]
@@ -528,24 +527,14 @@ problem distributions.
 conjecture that cost tracks entropy at long horizons [@garrett2014long]
 but do not prove this here.
 
-(iii) The cosmological motivation in §2.3 is genuinely speculative and
-is explicitly not load-bearing for H4.
-
-(iv) Selection effects in BLS occupational data --- reclassification,
+(iii) Selection effects in BLS occupational data --- reclassification,
 gig-economy invisibility, off-shoring --- may bias the regression.
 Robustness checks using alternative employment series (CPS, ADP) are
 advisable.
 
-(v) The framework is silent on welfare. A thermodynamically or
+(iv) The framework is silent on welfare. A thermodynamically or
 informationally favoured outcome is not, on that account, a desirable
 outcome.
-
-(vi) $H^{\text{info}}_i = 1 - \alpha_i$ uses the same exposure data
-($\alpha_i$) that drives the GPT-exposure controls in specs 5--6. This
-introduces a mechanical relationship, not necessarily a causal one. A
-v1.1 robustness check using the Autor RTI (Routine Task Intensity)
-index --- an entirely different $H^{\text{info}}$ proxy from a
-different research programme --- is the next step.
 
 # 9. An Operational Resilience Index (IRI)
 
@@ -674,7 +663,65 @@ the construction code, is published as a companion Zenodo dataset
 and re-weighting; we do *not* claim IRI as the unique correct
 operationalisation of H4-info, only as a transparent first attempt.
 
-## 9.6 Multi-source robustness (v1.2): Felten AIOE as alternative proxy
+## 9.6 Tautology break (v2.1): RTI as AI-independent $H^{\text{info}}$ proxy
+
+The principal weakness of v2.0 (correctly identified in informal review)
+was that $H^{\text{info}}_i = 1 - \alpha_i$ uses Eloundou et al.'s
+direct-LLM-exposure score $\alpha_i$, which is itself an
+AI-substitutability measure. Demonstrating that "occupations of low
+$\alpha$ shrink slowly" using $1 - \alpha$ as a predictor risks
+mechanical co-dependence with any AI-exposure control. To break this
+co-dependence, v2.1 reconstructs an alternative $H^{\text{info}}$
+proxy from Autor-Levy-Murnane-style routine/non-routine task
+intensities, computed entirely from O\*NET 30.2 importance ratings of
+fifteen non-AI-derived work-activity elements grouped into the
+canonical five categories [@autor2003skill; @acemoglu2011skills]:
+
+$$
+\text{RTI}_i = \tfrac{1}{2}\bigl[z(\text{R}^{\text{cog}}_i) + z(\text{R}^{\text{man}}_i)\bigr]
+- \tfrac{1}{3}\bigl[z(\text{NR}^{\text{anal}}_i) + z(\text{NR}^{\text{int}}_i) + z(\text{NR}^{\text{man}}_i)\bigr],
+$$
+
+with $H^{\text{info}}_{\text{RTI},i} = -\text{RTI}_i$ (higher value = more
+non-routine = more informational task entropy).
+
+The component categories use the following O\*NET Work Activities
+elements (Importance scale, IM):
+
+- Routine cognitive: 4.A.2.a.3, 4.A.4.c.1, 4.A.3.b.6.
+- Routine manual: 4.A.3.a.3, 4.A.3.a.2, 4.A.3.a.1.
+- Non-routine analytic: 4.A.2.a.4, 4.A.2.b.2, 4.A.2.b.4.
+- Non-routine interactive: 4.A.4.a.4, 4.A.4.b.4, 4.A.4.b.5.
+- Non-routine manual: 4.A.3.a.4, 4.A.3.b.4, 4.A.3.b.5.
+
+**Critical finding.** The Pearson correlation between
+$H^{\text{info}}_{\text{RTI}}$ and the original
+$H^{\text{info}}_{\text{Eloundou}} = 1 - \alpha$ is
+
+$$
+r = +0.027 \quad (p = 0.47, N = 707).
+$$
+
+The two proxies are statistically *independent*. The RTI proxy uses
+*no* AI-exposure information; it is constructed entirely from
+occupation task profiles. Yet the labour-market regression on RTI
+alone yields
+
+$$
+\hat{\beta}_{H^{\text{info}}_{\text{RTI}}} = +9.79 \times 10^{-3},
+\quad t = +3.25, \quad p_{\text{one}} = 6.0 \times 10^{-4}.
+$$
+
+The H4-info prediction therefore survives the tautology check: an
+$H^{\text{info}}$ proxy that has *zero AI content* still predicts
+employment growth in the H4-direction.
+
+A horse-race specification including both $H^{\text{info}}_{\text{RTI}}$
+and $H^{\text{info}}_{\text{Eloundou}}$ keeps both significant
+(RTI: $t = +3.19$; Eloundou: $t = +2.62$), with the RTI loading slightly
+larger. Each proxy carries information the other lacks.
+
+## 9.7 Multi-source robustness (v1.2): Felten AIOE as alternative proxy
 
 The headline IRI uses the Eloundou et al. $\alpha_i$ score
 [@eloundou2023gpts] as the $H^{\text{info}}$ proxy. Because the same
@@ -702,7 +749,7 @@ onto each other and each carries some information beyond the other. The
 H4-info prediction therefore survives a robustness check using an
 entirely different exposure-measurement programme.
 
-## 9.7 Industry-level fixed effects (v1.3)
+## 9.8 Industry-level fixed effects (v1.3)
 
 The aggregate regression in §5.2 pools across industries. Industry-level
 shocks --- e.g., COVID-era contraction of hospitality versus the
@@ -737,7 +784,32 @@ it persists at very high statistical significance after industry fixed
 effects, and contributes a non-trivial fraction of explained variation
 on top of the industry effects themselves.
 
-## 9.8 Cross-country generalisation (v1.4 attempted, deferred)
+## 9.9 E^{thermo} robustness (v2.1): multi-element strength index
+
+A complementary critique of v2.0 was that the $E^{\text{thermo}}_i$
+proxy used only "spend time" body-position elements (sitting, standing,
+walking) and may have been too noisy to give H4-thermo a fair test.
+v2.1 reconstructs $E^{\text{thermo}}_{2,i}$ from a richer multi-element
+basket: the original sitting (negative), standing, walking elements
+plus climbing, kneeling, bending, repetitive motions (Work Context),
+and Work Activities elements 4.A.3.a.1 (Performing General Physical
+Activities, Importance) and 4.A.3.a.2 (Handling and Moving Objects,
+Importance). All standardised; signs reflect the direction of metabolic
+contribution.
+
+The univariate regression on the enriched proxy yields
+
+$$
+\hat{\beta}_{E^{\text{thermo}}_2} = -9.26 \times 10^{-4},
+\quad t = -3.78, \quad p = 1.7 \times 10^{-4}.
+$$
+
+The sign is *still negative*, in the *opposite* direction from H4-thermo.
+The v2.1 enrichment therefore confirms the v2.0 finding that
+H4-thermo is not supported on the BLS 2019--2024 panel; the failure is
+not a measurement artefact.
+
+## 9.10 Cross-country and causal identification (deferred)
 
 A natural extension is to replicate the IRI--employment relationship on
 OECD or EU labor-market panels. The principal obstacle is the
@@ -747,43 +819,73 @@ detailed-level cross-walks introduce substantial aggregation noise. A
 preliminary attempt to assemble an OECD/Eurostat panel comparable to
 the BLS 2019--2024 series at the detailed-occupation level was
 unsuccessful within the scope of v2.0. Cross-country replication, with
-a defensible SOC--ISCO bridge, is the central task of v2.1+.
+a defensible SOC--ISCO bridge, remains the central task of v2.2+.
+
+A second deferred extension is *causal identification* through
+state-level variation in AI adoption --- e.g., a
+difference-in-differences design comparing AI-intensive states
+(California, Washington, Massachusetts, New York) with low-AI-adoption
+regions. The 2019--2024 panel period coincides with COVID-19,
+quantitative-easing-driven asset inflation, and large minimum-wage
+adjustments, all of which plausibly contribute to the observed
+contraction of low-IRI occupations independently of AI substitution.
+The §9.6 RTI result --- that an AI-content-free $H^{\text{info}}$
+proxy still predicts employment growth in the predicted direction ---
+mitigates this concern, since RTI cannot mechanically capture COVID or
+minimum-wage shocks. But a state-by-state DiD with a defensible
+state-level AI-adoption instrument would constitute a stronger causal
+claim. State-level BLS panels are available; a standard measure of
+state-level AI adoption is not yet established in the literature. We
+defer this to v2.2+.
 
 # 10. Conclusion
 
-This is v2.0. We have argued that the thermodynamic-informational lens
---- specifically, the *informational task entropy* of an occupation,
-$H^{\text{info}}$ --- provides a partial but novel predictor of the
-occupation's temporal robustness against AI-driven substitution. The
-informational form is empirically supported on the US BLS 2019--2024
-panel ($\hat{\beta}_{H^{\text{info}}} > 0$, $p < 10^{-5}$ in the joint
-specification, $p < 10^{-13}$ once broad AI exposure is conditioned
-out). The thermodynamic form --- an earlier formulation of the same
-hypothesis using metabolic dissipation rate as the entropy proxy --- is
-not supported on the same data and is dominated by non-AI confounders.
-The cosmological proposals invoked in §2.3 are not load-bearing for
-this claim.
+This is v2.1. We have argued that the *informational task entropy* of
+an occupation, $H^{\text{info}}$, provides a partial but novel
+predictor of the occupation's temporal robustness against AI-driven
+substitution. The informational form is empirically supported on the
+US BLS 2019--2024 panel under multiple operationalisations.
 
-The prediction survives a robustness check using the Felten et al. AIOE
-measure as an alternative $H^{\text{info}}$ proxy ($r = +0.258$,
-$p < 10^{-10}$, §9.6) and persists under 2-digit NAICS industry fixed
-effects ($\hat{\beta}_{\text{IRI}}$ at $t = +7.86$,
-$p = 1.7 \times 10^{-14}$, with IRI contributing $\Delta R^2 = +0.077$
-on top of the industry effects themselves, §9.7). The policy
-implication is that redistribution
-and retraining programmes should be designed against the *informational*
-thermodynamic order of substitution: lowest-variability occupations
-first, then mid-variability, with genuinely high-variability occupations
-the slowest to substitute. The high energy footprint of AI is, under
-MEPP, the feature that selects the technology rather than a bug to be
-optimised away; but the *targeting* of that selection on the labor
-side is informational, not metabolic.
+The most defensible result, added in v2.1 (§9.6), uses an
+$H^{\text{info}}$ proxy reconstructed from Autor-Levy-Murnane-style
+routine task intensities (RTI) computed from O\*NET task profiles
+*without* any AI-exposure information. The Pearson correlation between
+this AI-independent RTI proxy and the original $1 - \alpha$ proxy is
+only $r = +0.027$ ($p = 0.47$): they are statistically independent.
+The RTI-only regression yields $\hat{\beta}_{H^{\text{info}}_{\text{RTI}}}
+= +9.79 \times 10^{-3}$, $t = +3.25$, one-sided $p = 6.0 \times 10^{-4}$.
+The H4-info prediction therefore survives the strongest possible
+robustness check: an entirely AI-content-free task-intensity measure
+predicts employment growth in the predicted direction on the same
+panel. This rules out the tautology objection that the v2.0 result
+merely re-labels a known AI-exposure pattern.
 
-Robustness checks against the Felten AIOE alternative proxy (§9.6) and
-2-digit NAICS industry fixed effects (§9.7) have been added in this
-version. Cross-country generalisation against an ISCO-08-based panel
-(v2.1+) and a pre-registered specification grid for the BLS series
-extension are the principal items of remaining work.
+The thermodynamic form (H4-thermo) is not supported on the same data
+and is dominated by non-AI confounders. v2.1 enriches the
+$E^{\text{thermo}}$ proxy with strength, climbing, kneeling, bending,
+and repetitive-motion elements (§9.9); the negative-sign result
+persists ($\hat{\beta} = -9.3 \times 10^{-4}$, $p = 1.7 \times 10^{-4}$),
+ruling out the alternative that H4-thermo failed only because of a
+crude proxy.
+
+Earlier-version checks remain in place: the prediction also persists
+under the Felten et al. AIOE alternative proxy ($r = +0.258$,
+$p < 10^{-10}$, §9.7) and under 2-digit NAICS industry fixed effects
+($\hat{\beta}_{\text{IRI}}$ at $t = +7.86$, $p = 1.7 \times 10^{-14}$,
+with IRI contributing $\Delta R^2 = +0.077$ on top of industry effects,
+§9.8). The policy implication is that redistribution and retraining
+programmes should be designed against the *informational* order of
+substitution: lowest-variability occupations first, then
+mid-variability, with high-variability occupations slowest to
+substitute. The high energy footprint of AI is, under MEPP, the feature
+that selects the technology rather than a bug to be optimised away;
+but the *targeting* of that selection on the labour side is
+informational, not metabolic.
+
+Cross-country generalisation against an ISCO-08-based panel and
+state-level difference-in-differences identification of the
+AI-attributable component (§9.10) are the principal items of remaining
+work for v2.2+.
 
 # References
 
